@@ -47,14 +47,16 @@ function Input() {
         }
       );
     } else {
-      await updateDoc(doc(db, "chats", chat.chatId), {
-        messages: arrayUnion({
-          id: uuid(),
-          text,
-          senderId: currentUser.uid,
-          date: Timestamp.now(),
-        }),
-      });
+      if (text) {
+        await updateDoc(doc(db, "chats", chat.chatId), {
+          messages: arrayUnion({
+            id: uuid(),
+            text,
+            senderId: currentUser.uid,
+            date: Timestamp.now(),
+          }),
+        });
+      }
     }
 
     await updateDoc(doc(db, "userChats", currentUser.uid), {
