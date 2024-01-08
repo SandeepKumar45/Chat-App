@@ -30,7 +30,7 @@ function Message({message}) {
       </div>
       <div className={`max-w-[80%] flex flex-col gap-2 ${message.senderId === currentUser.uid && 'items-end'}`}>
         {message.img && <img src={message.img} alt="" className='w-1/2' />}
-        {message.text && <p className={` py-2 px-5 rounded-e-lg rounded-es-lg ${message.senderId === currentUser.uid ? 'bg-[#8da4f1]': 'bg-white'}`}>{message.text}</p>}
+        {message.text && <p className={` py-2 px-5 rounded-e-lg rounded-es-lg max-w-max ${message.senderId === currentUser.uid ? 'bg-[#8da4f1]': 'bg-white'}`}>{message.text}</p>}
       </div>
     </div>
   )
