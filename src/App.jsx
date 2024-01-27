@@ -1,30 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
-import {useSelector} from 'react-redux'
-import {Navigate} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import MyContext from './context/MyContext'
 
 function App() {
-  const ProtectedRoute = ({children}) => {
-    const user = useSelector(state=>state.auth.userData)
+  const ProtectedRoute = ({ children }) => {
+    const user = useSelector(state => state.auth.userData)
     if (user) {
       return children
     }
-    else{
-      return <Navigate to='/login'/>
+    else {
+      return <Navigate to='/login' />
     }
   }
   const router = createBrowserRouter([
     {
       path: "/",
       element: <ProtectedRoute>
-                    <Home /> 
-               </ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
     },
     {
       path: "/login",
@@ -38,7 +36,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <MyContext>
+        <RouterProvider router={router} />
+      </MyContext>
     </>
   )
 }

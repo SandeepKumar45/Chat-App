@@ -10,10 +10,6 @@ import { clearChat } from '../features/chatSlice';
 
 
 
-
-
-
-
 function Register() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -92,7 +88,7 @@ function Register() {
     }
     return (
         <div className="bg-[#a7bcff] h-screen flex justify-center items-center ">
-            <div className="bg-white py-5 px-[60px] rounded-xl flex flex-col gap-3 items-center ">
+            <div className="bg-white py-5 px-[20px] md:px-[60px] rounded-xl flex flex-col gap-3 items-center ">
                 <span className="text-[#5d5b8d] font-bold text-xl ">Ignite Chat</span>
                 <span className="text-[#5d5b8d] text-[12px] ">Register</span>
                 <form onSubmit={handleSubmit} className='flex flex-col gap-4'>

@@ -40,7 +40,7 @@ function Login() {
     }
     return (
         <div className="bg-[#a7bcff] h-screen flex justify-center items-center ">
-            <div className="bg-white py-5 px-[60px] rounded-xl flex flex-col gap-3 items-center ">
+            <div className="bg-white py-5 px-[20px] md:px-[60px] rounded-xl flex flex-col gap-3 items-center ">
                 <span className="text-[#5d5b8d] font-bold text-xl -mt-3 ">Ignite Chat</span>
                 <span className="text-[#5d5b8d] text-[12px] ">Login</span>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
